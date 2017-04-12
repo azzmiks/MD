@@ -1,8 +1,8 @@
 package google.tests;
 
-import google.pages.*;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+import google.pages.HomePage;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,8 +17,9 @@ public class GoToGooglePage {
     private WebDriver driver;
     private HomePage homePage;
 
-    @BeforeClass //(alwaysRun = true)
+    @Before
     public void setUp() {
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
@@ -27,7 +28,7 @@ public class GoToGooglePage {
         homePage = new HomePage(driver).open();
     }
 
-    @AfterClass //(alwaysRun = true)
+    @After //(alwaysRun = true)
     public void tearDown() {
         driver.quit();
     }
