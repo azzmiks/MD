@@ -17,11 +17,10 @@ public class GoToGooglePage {
 
         driver = new ChromeDriver();
     }
-
-    // @BeforeMethod - what can we use in Junit instead of it
-    //   public void openHomePage() {
-    //driver.get("http://www.google.com");
-    //}
+    //@BeforeMethod - what is the analog of it in JUnit
+    public void openHomePage() {
+        driver.get("http://www.google.com");
+    }
 
     @AfterClass
     public void tearDown() {
@@ -30,8 +29,7 @@ public class GoToGooglePage {
 
     @Test
     public void test(){
-
-        driver.get("http://www.google.com");
+    //TODO
     }
 
 }
