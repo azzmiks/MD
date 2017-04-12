@@ -1,4 +1,4 @@
-package google.google.components;
+package google.components;
 
 import google.pages.SearchResultsPage;
 import org.openqa.selenium.By;
