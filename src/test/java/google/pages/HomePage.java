@@ -20,7 +20,6 @@ public class HomePage {
     private By by = By.xpath(String.format(test, "submit"));
 
 
-
     private WebDriver driver;
 
     public HomePage(WebDriver driver) {
