@@ -10,6 +10,7 @@ public class SearchDetailsPage {
 
 
     public SearchDetailsPage(WebDriver driver) {
+
         this.driver = driver;
     }
 

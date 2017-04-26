@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
  */
 public class SearchField {
 
-    private static final By SEARCH_FIELD = By.id("fkbx-text");
+    private static final By SEARCH_FIELD = By.id("lst-ib");
     private WebDriver driver;
 
     public SearchField(WebDriver driver) {
