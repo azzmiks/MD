@@ -2,8 +2,7 @@ package google.pages;
 
 import google.common.pageObjects.BasePage;
 import google.common.utils.CustomWait;
-import google.components.SearchField;
-import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,8 +25,8 @@ public class HomePage extends BasePage {
         customWait = new CustomWait(webDriver);
     }
 
-    public HomePage enterRequest(String request) {
-        searchField.sendKeys(request);
+    public HomePage enterRequestAndSearch(String request) {
+        searchField.sendKeys(request, Keys.ENTER);
         return this;
     }
 
@@ -40,5 +39,10 @@ public class HomePage extends BasePage {
     public boolean isLoaded() {
         return customWait.isElementPresent(searchField);
     }
+
+    public boolean isSearchButtonDisplayed() {
+        return customWait.isElementPresent(searchButton);
+    }
+
 
 }

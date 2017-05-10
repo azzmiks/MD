@@ -5,6 +5,7 @@ package google.common.utils;
  */
 public enum UrlProvider {
     GOOGLE_MAIN("https://www.google.com/en"),
+    TEST_URL("");
 
     private final String baseUrl;
 

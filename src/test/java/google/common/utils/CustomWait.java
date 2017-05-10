@@ -68,12 +68,12 @@ public class CustomWait {
 
     public void clickElement(final By by, final int timeoutInSeconds) {
         FluentWait<WebDriver> wait = createWait(timeoutInSeconds);
-        wait.until(driver -> {
-            if(isElementClickable(driver.findElement(by))) {
-                driver.findElement(by).click();
-            }
-            return true;
-        });
+            wait.until(driver -> {
+                if(isElementClickable(driver.findElement(by))) {
+                    driver.findElement(by).click();
+                }
+                return true;
+            });
     }
 
     public String getElementText(final By by, final int timeoutInSeconds) {

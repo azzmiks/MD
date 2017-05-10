@@ -19,21 +19,21 @@ public class PageObjectManager {
         this.webDriver = webDriver;
     }
 
-    public HomePage mainPage() {
+    public HomePage getHomePage() {
         if (homePage == null) {
             homePage = PageFactory.initElements(webDriver, HomePage.class);
         }
         return homePage;
     }
 
-    public SearchDetailsPage loginPage() {
+    public SearchDetailsPage getSearchDetailsPage() {
         if (searchDetailsPage == null) {
             searchDetailsPage = PageFactory.initElements(webDriver, SearchDetailsPage.class);
         }
         return searchDetailsPage;
     }
 
-    public SearchResultsPage passwordPage() {
+    public SearchResultsPage getSearchResultsPage() {
         if (searchResultsPage == null) {
             searchResultsPage = PageFactory.initElements(webDriver, SearchResultsPage.class);
         }

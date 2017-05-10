@@ -1,40 +1,36 @@
 package google.tests;
 
+import google.common.test.BaseTest;
+import google.common.utils.UrlProvider;
 import google.pages.HomePage;
 import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.util.concurrent.TimeUnit;
+import static org.assertj.core.api.Assertions.*;
 
 /**
  * Created by azmiks on 11/04/2017.
  */
-public class GoToGooglePage {
+public class GoToGooglePage extends BaseTest {
 
-    private WebDriver driver;
+    private WebDriver webDriver;
     private HomePage homePage;
 
-    @Before
-    public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-    }
-    //@BeforeMethod - what is the analog of it in JUnit
-    public void openHomePage() {
-        homePage = new HomePage(driver).open();
+    public GoToGooglePage(){
+        super();
     }
 
     @After //(alwaysRun = true)
     public void tearDown() {
-        driver.quit();
+        super.webDriver.quit();
     }
 
     @Test
     public void test(){
+        manager.getHomePage().loadPage(UrlProvider.GOOGLE_MAIN.getUrl());
+        assertThat(manager.getHomePage().isSearchButtonDisplayed()).isTrue();
+        manager.getHomePage().enterRequestAndSearch("GitHub");
 
     }
 
