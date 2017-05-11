@@ -1,27 +1,31 @@
 package google.pages;
 
+import google.common.pageObjects.BasePage;
+import google.common.utils.CustomWait;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 /**
  * Created by Myroslava_Zubach on 12.04.2017.
  */
-public class SearchResultsPage {
+public class SearchResultsPage extends HomePage {
 
-        private By SEARCH_RESULT_ITEM_TITLE = new By.ByXPath("//h3[1]"); //how can I use XPath here?
-        private WebDriver driver;
+    @FindBy (xpath = "//h3[1]/a")
+    private WebElement searchResult;
 
-        public SearchResultsPage(WebDriver driver) {
-            this.driver = driver;
-        }
+    private CustomWait customWait;
 
-        public String getFirstResultTitle() {
-            return driver.findElement(SEARCH_RESULT_ITEM_TITLE).getText();
-        }
+    public SearchResultsPage (WebDriver webDriver) {
+        super(webDriver);
+        customWait = new CustomWait(webDriver);
+    }
 
-        public SearchDetailsPage clickFirstResultTitle() {
-            driver.findElement(SEARCH_RESULT_ITEM_TITLE).click();
-            return new SearchDetailsPage(driver);
-        }
+    public SearchResultsPage getFirstResultTitle() {
+        searchResult.click();
+        return this;
+    }
 
     }
