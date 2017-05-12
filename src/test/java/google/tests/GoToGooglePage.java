@@ -31,6 +31,7 @@ public class GoToGooglePage extends BaseTest {
         manager.getHomePage().loadPage(UrlProvider.GOOGLE_MAIN.getUrl());
         assertThat(manager.getHomePage().isSearchButtonDisplayed()).isTrue();
         manager.getHomePage().enterRequestAndSearch("GitHub");
+        assertThat(manager.getSearchResultsPage().isLoaded()).isTrue();
         manager.getSearchResultsPage().getFirstResultTitle();
 
     }

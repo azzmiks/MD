@@ -1,19 +1,23 @@
 package google.pages;
 
-import google.common.pageObjects.BasePage;
 import google.common.utils.CustomWait;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 /**
  * Created by Myroslava_Zubach on 12.04.2017.
  */
 public class SearchResultsPage extends HomePage {
 
-    @FindBy (xpath = "//h3[1]/a")
+
+    private static Logger logger = LoggerFactory.getLogger(SearchResultsPage.class);
+
+    @FindBy(xpath = "(//h3/a)[3]")
+    //@FindBy (xpath = "(//h3/a)[3]")
     private WebElement searchResult;
 
     private CustomWait customWait;
@@ -28,4 +32,9 @@ public class SearchResultsPage extends HomePage {
         return this;
     }
 
+    @Override
+    public boolean isLoaded() {
+        return customWait.isElementPresent(searchResult);
     }
+
+}
