@@ -18,11 +18,13 @@ public class GoToGooglePage extends BaseTest {
     private HomePage homePage;
 
     public GoToGooglePage(){
+
         super();
     }
 
-    @After //(alwaysRun = true)
+    @After
     public void tearDown() {
+
         super.webDriver.quit();
     }
 

@@ -5,6 +5,8 @@ import google.pages.SearchDetailsPage;
 import google.pages.SearchResultsPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import theInternet.pages.*;
+
 /**
  * Created by Myroslava_Zubach on 20.04.2017.
  */
@@ -14,6 +16,8 @@ public class PageObjectManager {
     private HomePage homePage;
     private SearchDetailsPage searchDetailsPage;
     private SearchResultsPage searchResultsPage;
+    private MainPage mainPage;
+    private BasicAuthPage basicAuthPage;
 
     public PageObjectManager(WebDriver webDriver) {
         this.webDriver = webDriver;
@@ -38,5 +42,19 @@ public class PageObjectManager {
             searchResultsPage = PageFactory.initElements(webDriver, SearchResultsPage.class);
         }
         return searchResultsPage;
+    }
+
+    public MainPage getMainPage() {
+        if (mainPage == null) {
+            mainPage = PageFactory.initElements(webDriver, MainPage.class);
+        }
+        return mainPage;
+    }
+
+    public BasicAuthPage getBasicAuthPage() {
+        if (basicAuthPage == null) {
+            basicAuthPage = PageFactory.initElements(webDriver, BasicAuthPage.class);
+        }
+        return basicAuthPage;
     }
 }
