@@ -17,6 +17,7 @@ public class PageObjectManager {
     private SearchDetailsPage searchDetailsPage;
     private SearchResultsPage searchResultsPage;
     private MainPage mainPage;
+    private ABTestingPage abTestingPage;
     private BasicAuthPage basicAuthPage;
 
     public PageObjectManager(WebDriver webDriver) {
@@ -49,6 +50,13 @@ public class PageObjectManager {
             mainPage = PageFactory.initElements(webDriver, MainPage.class);
         }
         return mainPage;
+    }
+
+    public ABTestingPage getAbTestingPage() {
+        if (abTestingPage == null) {
+            abTestingPage = PageFactory.initElements(webDriver, ABTestingPage.class);
+        }
+        return abTestingPage;
     }
 
     public BasicAuthPage getBasicAuthPage() {

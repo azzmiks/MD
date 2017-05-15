@@ -14,6 +14,9 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//h1[@class=\"heading\"]")
     private WebElement welcomeToTheInternet;
 
+    @FindBy(xpath = "//a[@href='/abtest']")
+    private WebElement abTest;
+
     @FindBy(xpath = "//a[@href='/basic_auth']")
     private WebElement basicAuth;
 
@@ -22,6 +25,11 @@ public class MainPage extends BasePage {
     public MainPage (WebDriver webDriver) {
         super(webDriver);
         customWait = new CustomWait(webDriver);
+    }
+
+    public MainPage clickOnABTestingLink() {
+        abTest.click();
+        return this;
     }
 
     public MainPage clickOnBasicAuthLink() {

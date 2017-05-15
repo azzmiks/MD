@@ -1,0 +1,36 @@
+package theInternet.pages;
+
+import common.utils.CustomWait;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+/**
+ * Created by azmiks on 15/05/2017.
+ */
+public class ABTestingPage extends MainPage {
+
+    @FindBy (xpath = "//h3[contains(text(), 'A/B Test Variation 1')]")
+    private WebElement abTestHeader;
+
+    @FindBy (xpath = "//p")
+    private WebElement abTestContent;
+
+    private CustomWait customWait;
+
+    public ABTestingPage (WebDriver webDriver) {
+        super(webDriver);
+        customWait = new CustomWait(webDriver);
+    }
+
+    public ABTestingPage checkABTestContent(String phrase) {
+        abTestContent.getText().contains(phrase);
+        return this;
+    }
+
+    @Override
+    public boolean isLoaded() {
+
+        return customWait.isElementPresent(abTestHeader);
+    }
+}

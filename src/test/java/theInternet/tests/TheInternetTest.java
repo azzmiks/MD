@@ -28,6 +28,9 @@ public class TheInternetTest extends BaseTest {
     @Test
     public void test(){
         manager.getMainPage().loadPage(UrlProvider.THE_INTERNET.getUrl());
-        manager.getMainPage().clickOnBasicAuthLink();
+        manager.getMainPage().clickOnABTestingLink();
+        manager.getAbTestingPage().checkABTestContent("split testing");
+
+//        manager.getMainPage().clickOnBasicAuthLink();
     }
 }
