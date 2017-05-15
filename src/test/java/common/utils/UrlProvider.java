@@ -1,11 +1,11 @@
-package google.common.utils;
+package common.utils;
 
 /**
  * Created by azmiks on 26/04/2017.
  */
 public enum UrlProvider {
     GOOGLE_MAIN("https://www.google.com/en"),
-    TEST_URL("");
+    THE_INTERNET("https://the-internet.herokuapp.com/");
 
     private final String baseUrl;
 

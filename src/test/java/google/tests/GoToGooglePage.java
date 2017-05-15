@@ -1,7 +1,7 @@
 package google.tests;
 
-import google.common.test.BaseTest;
-import google.common.utils.UrlProvider;
+import common.test.BaseTest;
+import common.utils.UrlProvider;
 import google.pages.HomePage;
 import org.junit.After;
 import org.junit.Test;

@@ -1,7 +1,7 @@
 package google.pages;
 
-import google.common.pageObjects.BasePage;
-import google.common.utils.CustomWait;
+import common.pageObjects.BasePage;
+import common.utils.CustomWait;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

@@ -1,6 +1,6 @@
 package google.pages;
 
-import google.common.utils.CustomWait;
+import common.utils.CustomWait;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

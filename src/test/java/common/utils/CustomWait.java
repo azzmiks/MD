@@ -1,4 +1,4 @@
-package google.common.utils;
+package common.utils;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;

@@ -1,4 +1,4 @@
-package google.common.utils;
+package common.utils;
 
 import google.pages.HomePage;
 import google.pages.SearchDetailsPage;

@@ -1,4 +1,4 @@
-package google.common.pageObjects;
+package common.pageObjects;
 
 import org.openqa.selenium.WebDriver;
 
