@@ -11,14 +11,17 @@ import org.openqa.selenium.support.FindBy;
  */
 public class MainPage extends BasePage {
 
-    @FindBy(xpath = "//h1[@class=\"heading\"]")
+    @FindBy (xpath = "//h1[@class=\"heading\"]")
     private WebElement welcomeToTheInternet;
 
-    @FindBy(xpath = "//a[@href='/abtest']")
+    @FindBy (xpath = "//a[@href='/abtest']")
     private WebElement abTest;
 
-    @FindBy(xpath = "//a[@href='/basic_auth']")
+    @FindBy (xpath = "//a[@href='/basic_auth']")
     private WebElement basicAuth;
+
+    @FindBy (xpath = "//a[@href='/login']")
+    private WebElement formAuthentication;
 
     private CustomWait customWait;
 
@@ -34,6 +37,11 @@ public class MainPage extends BasePage {
 
     public MainPage clickOnBasicAuthLink() {
         basicAuth.click();
+        return this;
+    }
+
+    public MainPage clickOnFormAuthentication() {
+        formAuthentication.click();
         return this;
     }
 

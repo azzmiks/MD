@@ -2,10 +2,10 @@ package theInternet.tests;
 
 import common.test.BaseTest;
 import common.utils.UrlProvider;
-import google.pages.HomePage;
 import org.junit.After;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import theInternet.pages.MainPage;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -14,7 +14,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 public class TheInternetTest extends BaseTest {
     private WebDriver webDriver;
-    private HomePage homePage;
+    private MainPage mainPage;
 
     public TheInternetTest(){
         super();
@@ -28,9 +28,21 @@ public class TheInternetTest extends BaseTest {
     @Test
     public void test(){
         manager.getMainPage().loadPage(UrlProvider.THE_INTERNET.getUrl());
-        manager.getMainPage().clickOnABTestingLink();
-        manager.getAbTestingPage().checkABTestContent("split testing");
 
-//        manager.getMainPage().clickOnBasicAuthLink();
+        // Test1. A/B Testing
+//        manager.getMainPage().clickOnABTestingLink();
+//        manager.getAbTestingPage().checkABTestContent("split testing");
+
+        // Test2: Basic Auth
+        //        manager.getMainPage().clickOnBasicAuthLink();
+
+        // Test3: Form Authentication
+        manager.getMainPage().clickOnFormAuthentication();
+        assertThat(manager.getFormAuthentication().isLoaded()).isTrue();
+        manager.getFormAuthentication().enterUsername("tomsmith");
+        manager.getFormAuthentication().enterPassword("SuperSecretPassword!");
+        manager.getFormAuthentication().clickLoginButton();
+        assertThat(manager.getFormAuthentication().isLoginSuccessful()).isTrue();
+
     }
 }

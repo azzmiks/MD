@@ -19,6 +19,8 @@ public class PageObjectManager {
     private MainPage mainPage;
     private ABTestingPage abTestingPage;
     private BasicAuthPage basicAuthPage;
+    private FormAuthenticationPage formAuthenticationPage;
+
 
     public PageObjectManager(WebDriver webDriver) {
         this.webDriver = webDriver;
@@ -64,5 +66,12 @@ public class PageObjectManager {
             basicAuthPage = PageFactory.initElements(webDriver, BasicAuthPage.class);
         }
         return basicAuthPage;
+    }
+
+    public FormAuthenticationPage getFormAuthentication() {
+        if (formAuthenticationPage == null) {
+            formAuthenticationPage = PageFactory.initElements(webDriver, FormAuthenticationPage.class);
+        }
+        return formAuthenticationPage;
     }
 }
