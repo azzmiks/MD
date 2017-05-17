@@ -43,6 +43,8 @@ public class TheInternetTest extends BaseTest {
         manager.getFormAuthentication().enterPassword("SuperSecretPassword!");
         manager.getFormAuthentication().clickLoginButton();
         assertThat(manager.getFormAuthentication().isLoginSuccessful()).isTrue();
+        manager.getFormAuthentication().clickLogoutButton();
+        assertThat(manager.getFormAuthentication().isLogoutSuccessful()).isTrue();
 
     }
 }

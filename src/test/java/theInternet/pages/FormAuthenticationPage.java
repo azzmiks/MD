@@ -1,7 +1,6 @@
 package theInternet.pages;
 
 import common.utils.CustomWait;
-import org.junit.experimental.theories.FromDataPoints;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -23,8 +22,14 @@ public class FormAuthenticationPage extends MainPage {
     @FindBy (xpath = "//button")
     private WebElement loginButton;
 
-    @FindBy (xpath = "//h2[contains(text(), 'Secure Area')]")
+    @FindBy (xpath = "//div[contains(text(), 'You logged into a secure area')]")
     private WebElement loginSuccess;
+
+    @FindBy (xpath = "//a[@href='/logout']")
+    private WebElement logoutButton;
+
+    @FindBy (xpath = "//div[contains(text(), 'You logged out of the secure area')]")
+    private WebElement logoutSuccess;
 
     private CustomWait customWait;
 
@@ -48,6 +53,11 @@ public class FormAuthenticationPage extends MainPage {
         return this;
     }
 
+    public FormAuthenticationPage clickLogoutButton() {
+        logoutButton.click();
+        return this;
+    }
+
     @Override
     public boolean isLoaded() {
         return customWait.isElementPresent(formAuthHeader);
@@ -55,5 +65,9 @@ public class FormAuthenticationPage extends MainPage {
 
     public boolean isLoginSuccessful() {
         return customWait.isElementPresent(loginSuccess);
+    }
+
+    public boolean isLogoutSuccessful() {
+        return customWait.isElementPresent(logoutSuccess);
     }
 }
