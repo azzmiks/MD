@@ -23,6 +23,9 @@ public class MainPage extends BasePage {
     @FindBy (xpath = "//a[@href='/login']")
     private WebElement formAuthentication;
 
+    @FindBy (xpath = "//a[@href='/checkboxes']")
+    private WebElement checkboxes;
+
     private CustomWait customWait;
 
     public MainPage (WebDriver webDriver) {
@@ -40,8 +43,13 @@ public class MainPage extends BasePage {
         return this;
     }
 
-    public MainPage clickOnFormAuthentication() {
+    public MainPage clickOnFormAuthenticationLink() {
         formAuthentication.click();
+        return this;
+    }
+
+    public MainPage clickOnCheckBoxesLink() {
+        checkboxes.click();
         return this;
     }
 

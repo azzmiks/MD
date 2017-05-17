@@ -20,6 +20,7 @@ public class PageObjectManager {
     private ABTestingPage abTestingPage;
     private BasicAuthPage basicAuthPage;
     private FormAuthenticationPage formAuthenticationPage;
+    private CheckboxesPage checkboxesPage;
 
 
     public PageObjectManager(WebDriver webDriver) {
@@ -68,10 +69,17 @@ public class PageObjectManager {
         return basicAuthPage;
     }
 
-    public FormAuthenticationPage getFormAuthentication() {
+    public FormAuthenticationPage getFormAuthenticationPage() {
         if (formAuthenticationPage == null) {
             formAuthenticationPage = PageFactory.initElements(webDriver, FormAuthenticationPage.class);
         }
         return formAuthenticationPage;
+    }
+
+    public CheckboxesPage getCheckboxesPage() {
+        if (checkboxesPage == null) {
+            checkboxesPage = PageFactory.initElements(webDriver, CheckboxesPage.class);
+        }
+        return checkboxesPage;
     }
 }

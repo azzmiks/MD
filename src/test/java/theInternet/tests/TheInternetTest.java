@@ -35,16 +35,23 @@ public class TheInternetTest extends BaseTest {
 
         // Test2: Basic Auth
         //        manager.getMainPage().clickOnBasicAuthLink();
-
+/*
         // Test3: Form Authentication
-        manager.getMainPage().clickOnFormAuthentication();
-        assertThat(manager.getFormAuthentication().isLoaded()).isTrue();
-        manager.getFormAuthentication().enterUsername("tomsmith");
-        manager.getFormAuthentication().enterPassword("SuperSecretPassword!");
-        manager.getFormAuthentication().clickLoginButton();
-        assertThat(manager.getFormAuthentication().isLoginSuccessful()).isTrue();
-        manager.getFormAuthentication().clickLogoutButton();
-        assertThat(manager.getFormAuthentication().isLogoutSuccessful()).isTrue();
-
+        manager.getMainPage().clickOnFormAuthenticationLink();
+        assertThat(manager.getFormAuthenticationPage().isLoaded()).isTrue();
+        manager.getFormAuthenticationPage().enterUsername("tomsmith");
+        manager.getFormAuthenticationPage().enterPassword("SuperSecretPassword!");
+        manager.getFormAuthenticationPage().clickLoginButton();
+        assertThat(manager.getFormAuthenticationPage().isLoginSuccessful()).isTrue();
+        manager.getFormAuthenticationPage().clickLogoutButton();
+        assertThat(manager.getFormAuthenticationPage().isLogoutSuccessful()).isTrue();
+*/
+        // Test4: Checkboxes
+        manager.getMainPage().clickOnCheckBoxesLink();
+        assertThat(manager.getCheckboxesPage().isLoaded()).isTrue();
+        manager.getCheckboxesPage().clickOnChecbox1();
+        manager.getCheckboxesPage().clickOnChecbox2();
+        assertThat(manager.getCheckboxesPage().isCheckbox1Checked()).isTrue();
+        assertThat(manager.getCheckboxesPage().isCheckbox2Checked()).isFalse();
     }
 }
