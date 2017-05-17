@@ -1,5 +1,6 @@
 package theInternet.pages;
 
+import common.pageObjects.BasePage;
 import common.utils.CustomWait;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 /**
  * Created by azmiks on 15/05/2017.
  */
-public class FormAuthenticationPage extends MainPage {
+public class FormAuthenticationPage extends BasePage {
 
     @FindBy (xpath = "//h2[contains(text(), 'Login Page')]")
     private WebElement formAuthHeader;

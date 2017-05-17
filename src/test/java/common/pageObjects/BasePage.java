@@ -1,5 +1,6 @@
 package common.pageObjects;
 
+import common.utils.CustomWait;
 import org.openqa.selenium.WebDriver;
 
 /**
@@ -7,10 +8,12 @@ import org.openqa.selenium.WebDriver;
  */
 public abstract class BasePage {
 
-    private WebDriver webDriver;
+    protected WebDriver webDriver;
+    protected CustomWait customWait;
 
     public BasePage(WebDriver webDriver){
         this.webDriver = webDriver;
+        customWait = new CustomWait(webDriver);
     }
 
     public abstract boolean isLoaded();

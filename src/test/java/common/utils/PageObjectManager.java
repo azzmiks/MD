@@ -21,6 +21,7 @@ public class PageObjectManager {
     private BasicAuthPage basicAuthPage;
     private FormAuthenticationPage formAuthenticationPage;
     private CheckboxesPage checkboxesPage;
+    private DropdownPage dropdownPage;
 
 
     public PageObjectManager(WebDriver webDriver) {
@@ -81,5 +82,12 @@ public class PageObjectManager {
             checkboxesPage = PageFactory.initElements(webDriver, CheckboxesPage.class);
         }
         return checkboxesPage;
+    }
+
+    public DropdownPage getDropdownPage() {
+        if (dropdownPage == null) {
+            dropdownPage = PageFactory.initElements(webDriver, DropdownPage.class);
+        }
+        return dropdownPage;
     }
 }

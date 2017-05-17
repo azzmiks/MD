@@ -1,5 +1,6 @@
 package theInternet.pages;
 
+import common.pageObjects.BasePage;
 import common.utils.CustomWait;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,8 +9,10 @@ import org.openqa.selenium.support.FindBy;
 /**
  * Created by azmiks on 15/05/2017.
  */
-public class BasicAuthPage extends MainPage {
+public class BasicAuthPage extends BasePage {
 
+    @FindBy (xpath = "//*[@id=\"content\"]/div/p")
+    private WebElement basicAuthTextCongrats;
 
     private CustomWait customWait;
 
@@ -18,9 +21,8 @@ public class BasicAuthPage extends MainPage {
         customWait = new CustomWait(webDriver);
     }
 
-/*    @Override
+    @Override
     public boolean isLoaded() {
-
-        return customWait.isElementPresent();
-    }*/
+        return customWait.isElementPresent(basicAuthTextCongrats);
+    }
 }

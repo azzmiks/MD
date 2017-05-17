@@ -1,5 +1,6 @@
 package theInternet.pages;
 
+import common.pageObjects.BasePage;
 import common.utils.CustomWait;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 /**
  * Created by azmiks on 15/05/2017.
  */
-public class ABTestingPage extends MainPage {
+public class ABTestingPage extends BasePage {
 
     @FindBy (xpath = "//h3[contains(text(), 'A/B Test Variation 1')]")
     private WebElement abTestHeader;
@@ -30,7 +31,6 @@ public class ABTestingPage extends MainPage {
 
     @Override
     public boolean isLoaded() {
-
         return customWait.isElementPresent(abTestHeader);
     }
 }

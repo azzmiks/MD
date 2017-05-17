@@ -17,14 +17,16 @@ public class MainPage extends BasePage {
     @FindBy (xpath = "//a[@href='/abtest']")
     private WebElement abTest;
 
-    @FindBy (xpath = "//a[@href='/basic_auth']")
-    private WebElement basicAuth;
-
     @FindBy (xpath = "//a[@href='/login']")
     private WebElement formAuthentication;
 
     @FindBy (xpath = "//a[@href='/checkboxes']")
     private WebElement checkboxes;
+
+    @FindBy (xpath = "//a[@href='/dropdown']")
+    private WebElement dropdown;
+
+    private String basicAuthUrl = "https://admin:admin@the-internet.herokuapp.com/basic_auth";
 
     private CustomWait customWait;
 
@@ -38,8 +40,8 @@ public class MainPage extends BasePage {
         return this;
     }
 
-    public MainPage clickOnBasicAuthLink() {
-        basicAuth.click();
+    public MainPage openBasicAuthLink() {
+        webDriver.get(basicAuthUrl);
         return this;
     }
 
@@ -52,6 +54,12 @@ public class MainPage extends BasePage {
         checkboxes.click();
         return this;
     }
+
+    public MainPage clickOnDropdownLink() {
+        dropdown.click();
+        return this;
+    }
+
 
     @Override
     public boolean isLoaded() {
