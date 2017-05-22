@@ -17,8 +17,6 @@ public class ABTestingPage extends BasePage {
     @FindBy (xpath = "//p")
     private WebElement abTestContent;
 
-    private CustomWait customWait;
-
     public ABTestingPage (WebDriver webDriver) {
         super(webDriver);
         customWait = new CustomWait(webDriver);

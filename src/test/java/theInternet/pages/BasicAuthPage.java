@@ -14,8 +14,6 @@ public class BasicAuthPage extends BasePage {
     @FindBy (xpath = "//*[@id=\"content\"]/div/p")
     private WebElement basicAuthTextCongrats;
 
-    private CustomWait customWait;
-
     public BasicAuthPage (WebDriver webDriver) {
         super(webDriver);
         customWait = new CustomWait(webDriver);

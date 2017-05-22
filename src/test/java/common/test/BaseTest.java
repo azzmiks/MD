@@ -13,8 +13,8 @@ public class BaseTest {
     protected PageObjectManager manager;
 
     public BaseTest() {
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
-//        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
+//        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         webDriver = new ChromeDriver();
         manager = new PageObjectManager(webDriver);
     }

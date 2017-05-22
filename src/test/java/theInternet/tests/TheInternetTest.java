@@ -3,6 +3,7 @@ package theInternet.tests;
 import common.test.BaseTest;
 import common.utils.UrlProvider;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -73,6 +74,8 @@ public class TheInternetTest extends BaseTest {
         manager.getMainPage().clickOnDropdownLink();
         assertThat(manager.getDropdownPage().isLoaded()).isTrue();
         manager.getDropdownPage().selectOption2FromDropdown();
-        assertThat(manager.getDropdownPage().isDropdownSelected()).isTrue();
+        assertThat(manager.getDropdownPage().isDropdownSelected()).isEqualToIgnoringCase("Option 2");
+        manager.getDropdownPage().selectOption1FromDropdown();
+        assertThat(manager.getDropdownPage().isDropdownSelected()).isEqualToIgnoringCase("Option 1");
     }
 }

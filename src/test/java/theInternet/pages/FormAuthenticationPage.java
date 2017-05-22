@@ -32,8 +32,6 @@ public class FormAuthenticationPage extends BasePage {
     @FindBy (xpath = "//div[contains(text(), 'You logged out of the secure area')]")
     private WebElement logoutSuccess;
 
-    private CustomWait customWait;
-
     public FormAuthenticationPage(WebDriver webDriver) {
         super(webDriver);
         customWait = new CustomWait(webDriver);

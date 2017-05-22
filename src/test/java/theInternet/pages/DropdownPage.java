@@ -15,11 +15,20 @@ public class DropdownPage extends BasePage {
     @FindBy (xpath = "//select[@id='dropdown']")
     private WebElement dropdown;
 
+    @FindBy (xpath = "//select[@id='dropdown']/option[@value=1]")
+    private WebElement option1;
+
     @FindBy (xpath = "//select[@id='dropdown']/option[@value=2]")
     private WebElement option2;
 
     public DropdownPage(WebDriver webDriver) {
         super(webDriver);
+    }
+
+    public DropdownPage selectOption1FromDropdown() {
+        dropdown.click();
+        option1.click();
+        return this;
     }
 
     public DropdownPage selectOption2FromDropdown() {
@@ -28,13 +37,15 @@ public class DropdownPage extends BasePage {
         return this;
     }
 
-    public boolean isDropdownSelected() {
-        Select select = new Select(dropdown).getFirstSelectedOption();
-        return !dropdown.isSelected();
+    public String isDropdownSelected() {
+        Select select = new Select(dropdown);
+        WebElement selectedOption = select.getFirstSelectedOption();
+        return selectedOption.getText();
     }
 
     @Override
     public boolean isLoaded() {
         return customWait.isElementPresent(dropdown);
     }
+
 }
