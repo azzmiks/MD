@@ -14,6 +14,9 @@ public class LoginGooglePage extends BasePage {
     @FindBy(xpath = ".//input[@id='identifierId']")
     private WebElement emailField;
 
+//  private String email = String.format(".//input[@id='%s']", "identifiedId");
+//  private By emailField = By.xpath("");
+
     @FindBy(id = "identifierNext")
     private WebElement nextButton;
 
@@ -22,6 +25,11 @@ public class LoginGooglePage extends BasePage {
     }
 
     public LoginGooglePage enterMailAddress(String login) {
+//      WebElement element = webDriver.findElement(emailField);
+//      WebElement element = webDriver.findElement(By.xpath(email)); -- in this case <private By emailField = By.xpath("");> is waste
+//      element.click();
+//      element.sendKeys(login);
+
         emailField.click();
         emailField.sendKeys(login);
         return this;
