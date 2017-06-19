@@ -1,9 +1,9 @@
 package theInternet.tests;
 
 import common.test.BaseTest;
+import common.utils.PageObjectManager;
 import common.utils.UrlProvider;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -17,6 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class TheInternetTest extends BaseTest {
     private WebDriver webDriver;
     private MainPage mainPage;
+    private PageObjectManager manager;
 
     public TheInternetTest(){
         super();
