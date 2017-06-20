@@ -26,6 +26,12 @@ public class MainPage extends BasePage {
     @FindBy (xpath = "//a[@href='/dropdown']")
     private WebElement dropdown;
 
+    @FindBy(xpath = "//a[contains(text(), 'File Upload')]")
+    private WebElement fileUploadLink;
+
+    @FindBy(xpath = "//a[contains(text(), 'Drag and Drop')]")
+    private WebElement dragAndDropLink;
+
     private String basicAuthUrl = "https://admin:admin@the-internet.herokuapp.com/basic_auth";
 
     private CustomWait customWait;
@@ -60,6 +66,15 @@ public class MainPage extends BasePage {
         return this;
     }
 
+    public MainPage clickUploadLink() {
+        fileUploadLink.click();
+        return this;
+    }
+
+    public MainPage clickDragAndDropLink() {
+        dragAndDropLink.click();
+        return this;
+    }
 
     @Override
     public boolean isLoaded() {
