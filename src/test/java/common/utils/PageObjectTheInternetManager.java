@@ -5,6 +5,8 @@ import theInternet.pages.FileUploadPage;
 import theInternet.pages.MainPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import theInternet.pages.WYSIWYGEditorPage;
+
 
 /**
  * Created by Myroslava_Zubach on 20.06.2017.
@@ -14,6 +16,7 @@ public class PageObjectTheInternetManager {
     private MainPage mainPage;
     private FileUploadPage fileUploadPage;
     private DragAndDropPage dragAndDropPage;
+    private WYSIWYGEditorPage wysiwygEditorPage;
 
     public PageObjectTheInternetManager(WebDriver webDriver) {
         this.webDriver = webDriver;
@@ -38,5 +41,12 @@ public class PageObjectTheInternetManager {
             dragAndDropPage = PageFactory.initElements(webDriver, DragAndDropPage.class);
         }
         return dragAndDropPage;
+    }
+
+    public WYSIWYGEditorPage getWYSIWYGEditorPage() {
+        if (wysiwygEditorPage == null) {
+            wysiwygEditorPage = PageFactory.initElements(webDriver, WYSIWYGEditorPage.class);
+        }
+        return wysiwygEditorPage;
     }
 }

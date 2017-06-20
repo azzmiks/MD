@@ -32,6 +32,9 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//a[contains(text(), 'Drag and Drop')]")
     private WebElement dragAndDropLink;
 
+    @FindBy(xpath = "//a[contains(text(), 'WYSIWYG Editor')]")
+    private WebElement wysiwygEditorLink;
+
     private String basicAuthUrl = "https://admin:admin@the-internet.herokuapp.com/basic_auth";
 
     private CustomWait customWait;
@@ -73,6 +76,11 @@ public class MainPage extends BasePage {
 
     public MainPage clickDragAndDropLink() {
         dragAndDropLink.click();
+        return this;
+    }
+
+    public MainPage clickWYSIWYGEditorLink() {
+        wysiwygEditorLink.click();
         return this;
     }
 
