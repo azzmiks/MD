@@ -38,6 +38,7 @@ public class WYSIWYGEditorTest extends BaseTest {
         manager.getMainPage().clickWYSIWYGEditorLink();
         assertThat(manager.getWYSIWYGEditorPage().isLoaded()).isTrue();
         manager.getWYSIWYGEditorPage().switchToEditorFrame();
+        assertThat(manager.getWYSIWYGEditorPage().isFrameContentPresent()).isTrue();
     }
 
 }

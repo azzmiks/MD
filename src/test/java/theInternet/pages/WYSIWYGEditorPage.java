@@ -16,6 +16,9 @@ public class WYSIWYGEditorPage extends BasePage {
     @FindBy(xpath = "//h3[contains(text(), 'An iFrame containing the TinyMCE WYSIWYG Editor')]")
     private WebElement wysiwygEditorHeader;
 
+    @FindBy(xpath = "")
+    private WebElement frameContent;
+
     public WYSIWYGEditorPage (WebDriver webDriver) {
         super(webDriver);
         customWait = new CustomWait(webDriver);
@@ -31,8 +34,14 @@ public class WYSIWYGEditorPage extends BasePage {
         return this;
     }
 
+
+
     @Override
     public boolean isLoaded() {
         return customWait.isElementPresent(wysiwygEditorHeader);
+    }
+
+    public boolean isFrameContentPresent(){
+        return customWait.isElementPresent(frameContent);
     }
 }
