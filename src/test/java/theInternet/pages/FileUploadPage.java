@@ -1,6 +1,7 @@
 package theInternet.pages;
 
 import common.pageObjects.BasePage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -37,10 +38,10 @@ public class FileUploadPage extends BasePage {
         return this;
     }
 
- //   public boolean isFileUploaded(String fileName) {
-        //example with element Changed in DOM after upload (element is not existing until DOM reload)
-//       return customWait.isElementPresented(By.xpath(String.format(fileUploadConfirmation, fileName)));
-//   }
+    public boolean isFileUploaded(String fileName) {
+       // example with element Changed in DOM after upload (element is not existing until DOM reload)
+       return customWait.isElementPresented(By.xpath(String.format(fileUploadConfirmation, fileName)));
+   }
 
     @Override
     public boolean isLoaded() {

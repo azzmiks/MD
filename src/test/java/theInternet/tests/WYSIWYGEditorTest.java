@@ -21,7 +21,7 @@ public class WYSIWYGEditorTest extends BaseTest {
         manager = new PageObjectTheInternetManager(webDriver);
     }
 
-    @BeforeMethod(enabled = false)
+    @BeforeMethod
     private void startUp() {
         url = UrlProvider.THE_INTERNET.getUrl();
     }
@@ -31,14 +31,24 @@ public class WYSIWYGEditorTest extends BaseTest {
         webDriver.quit();
     }
 
-    @Test(enabled = false)
-    public void shouldVerifyWYSIWYGEditor() throws InterruptedException {
+    @Test
+    public void shouldVerifyWYSIWYGEditor() {
         manager.getMainPage().loadPage(url);
         assertThat(manager.getMainPage().isLoaded()).isTrue();
         manager.getMainPage().clickWYSIWYGEditorLink();
         assertThat(manager.getWYSIWYGEditorPage().isLoaded()).isTrue();
         manager.getWYSIWYGEditorPage().switchToEditorFrame();
         assertThat(manager.getWYSIWYGEditorPage().isFrameContentPresent()).isTrue();
+        manager.getWYSIWYGEditorPage().switchToTopFrame();
+        manager.getWYSIWYGEditorPage().clickOnFileMenu();
+        manager.getWYSIWYGEditorPage().switchToEditorFrame();
+        assertThat(manager.getWYSIWYGEditorPage().isFrameContentPresent()).isFalse();
+        manager.getWYSIWYGEditorPage().switchToTopFrame();
+        manager.getWYSIWYGEditorPage().clickBold();
+        manager.getWYSIWYGEditorPage().clickItalic();
+        manager.getWYSIWYGEditorPage().switchToEditorFrame();
+        manager.getWYSIWYGEditorPage().enterText("Test Automation training is awesome!");
+        assertThat(manager.getWYSIWYGEditorPage().isTextPresentInFrame()).isTrue();
     }
 
 }
