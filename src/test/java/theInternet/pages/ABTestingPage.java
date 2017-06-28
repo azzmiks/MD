@@ -29,6 +29,6 @@ public class ABTestingPage extends BasePage {
 
     @Override
     public boolean isLoaded() {
-        return customWait.isElementPresent(abTestHeader);
+        return customWait.isElementVisible(abTestHeader);
     }
 }

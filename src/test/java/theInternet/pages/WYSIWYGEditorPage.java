@@ -76,14 +76,14 @@ public class WYSIWYGEditorPage extends BasePage {
 
     @Override
     public boolean isLoaded() {
-        return customWait.isElementPresent(wysiwygEditorHeader);
+        return customWait.isElementVisible(wysiwygEditorHeader);
     }
 
     public boolean isFrameContentPresent(){
-        return customWait.isElementPresent(frameContent);
+        return customWait.isElementVisible(frameContent);
     }
 
     public boolean isTextPresentInFrame() {
-        return customWait.isElementPresent(text);
+        return customWait.isElementVisible(text);
     }
 }

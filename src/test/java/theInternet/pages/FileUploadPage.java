@@ -40,11 +40,11 @@ public class FileUploadPage extends BasePage {
 
     public boolean isFileUploaded(String fileName) {
        // example with element Changed in DOM after upload (element is not existing until DOM reload)
-       return customWait.isElementPresented(By.xpath(String.format(fileUploadConfirmation, fileName)));
+       return customWait.isElementPresent(By.xpath(String.format(fileUploadConfirmation, fileName)));
    }
 
     @Override
     public boolean isLoaded() {
-        return customWait.isElementPresent(fileUploadController);
+        return customWait.isElementVisible(fileUploadController);
     }
 }

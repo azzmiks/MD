@@ -21,6 +21,6 @@ public class BasicAuthPage extends BasePage {
 
     @Override
     public boolean isLoaded() {
-        return customWait.isElementPresent(basicAuthTextCongrats);
+        return customWait.isElementVisible(basicAuthTextCongrats);
     }
 }

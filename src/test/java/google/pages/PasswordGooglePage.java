@@ -36,7 +36,7 @@ public class PasswordGooglePage extends BasePage {
 
     @Override
     public boolean isLoaded() {
-        return customWait.isElementPresent(passwordNextButton);
+        return customWait.isElementVisible(passwordNextButton);
     }
 
     public String getEmailDisplayed() {

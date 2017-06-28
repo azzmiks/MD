@@ -37,7 +37,7 @@ public class CheckboxesPage extends BasePage {
 
     @Override
     public boolean isLoaded() {
-        return customWait.isElementPresent(checkboxesHeader);
+        return customWait.isElementVisible(checkboxesHeader);
     }
 
     public boolean isCheckbox1Checked() {

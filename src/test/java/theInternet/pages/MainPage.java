@@ -86,7 +86,7 @@ public class MainPage extends BasePage {
 
     @Override
     public boolean isLoaded() {
-        return customWait.isElementPresent(welcomeToTheInternet);
+        return customWait.isElementVisible(welcomeToTheInternet);
     }
 
 

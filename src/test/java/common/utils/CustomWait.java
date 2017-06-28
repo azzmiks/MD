@@ -1,7 +1,10 @@
 package common.utils;
 
-
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -31,7 +34,7 @@ public class CustomWait {
         return createFluentWait().withTimeout(seconds, SECONDS);
     }
 
-    public boolean isElementPresent(final WebElement element) {
+    public boolean isElementVisible(final WebElement element) {
         FluentWait<WebDriver> wait = createWait(DEFAULT_TIMEOUT_IN_SEC);
         try {
             wait.until(ExpectedConditions.visibilityOf(element));
@@ -53,7 +56,7 @@ public class CustomWait {
         }
     }
 
-    public boolean isElementPresented(final By by) {
+    public boolean isElementPresent(final By by) {
         FluentWait<WebDriver> wait = createWait(DEFAULT_TIMEOUT_IN_SEC);
         try {
             wait.until(ExpectedConditions.presenceOfElementLocated(by));
@@ -85,11 +88,29 @@ public class CustomWait {
         });
     }
 
+    public void clickElement(final WebElement element, final int timeoutInSeconds) {
+        FluentWait<WebDriver> wait = createWait(timeoutInSeconds);
+        wait.until(driver -> {
+            if(isElementClickable(element)) {
+                element.click();
+            }
+            return true;
+        });
+    }
+
+    public void clickElement(final WebElement element) {
+        clickElement(element, DEFAULT_TIMEOUT_IN_SEC);
+    }
+
+    public void clickElement(final By by) {
+        clickElement(by, DEFAULT_TIMEOUT_IN_SEC);
+    }
+
     public String getElementText(final By by, final int timeoutInSeconds) {
         FluentWait<WebDriver> wait = createWait(timeoutInSeconds);
         return wait.until(driver -> {
             try {
-                if (isElementPresent(driver.findElement(by))) {
+                if (isElementVisible(driver.findElement(by))) {
                     return driver.findElement(by).getText();
                 }
             } catch (NoSuchElementException e) {
@@ -107,11 +128,14 @@ public class CustomWait {
                     return driver.findElement(by).getAttribute(attributeName);
                 }
             } catch (NoSuchElementException e) {
-                logger.error("Element not found! Can't get "+attributeName+"...", e);
+                logger.error("Element not found! Can't get '"+attributeName+"'...", e);
             }
             return "";
         });
     }
+}
+
+
 
 //    private static Logger logger = LoggerFactory.getLogger(CustomWait.class);
 //    private static final int DEFAULT_TIMEOUT_IN_SEC = 10;
@@ -199,4 +223,4 @@ public class CustomWait {
 //            return "";
 //        });
 //    }
-}
+

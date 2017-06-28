@@ -24,6 +24,6 @@ public class MainGooglePage extends BasePage {
 
     @Override
     public boolean isLoaded() {
-        return customWait.isElementPresent(signInButton);
+        return customWait.isElementVisible(signInButton);
     }
 }

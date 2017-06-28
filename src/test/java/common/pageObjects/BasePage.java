@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
  */
 public abstract class BasePage {
 
-    protected WebDriver webDriver;
+    public WebDriver webDriver;
     protected CustomWait customWait;
 
     public BasePage(WebDriver webDriver){

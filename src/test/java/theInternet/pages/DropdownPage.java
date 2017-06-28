@@ -45,7 +45,7 @@ public class DropdownPage extends BasePage {
 
     @Override
     public boolean isLoaded() {
-        return customWait.isElementPresent(dropdown);
+        return customWait.isElementVisible(dropdown);
     }
 
 }

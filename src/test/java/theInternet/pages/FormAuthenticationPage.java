@@ -59,14 +59,14 @@ public class FormAuthenticationPage extends BasePage {
 
     @Override
     public boolean isLoaded() {
-        return customWait.isElementPresent(formAuthHeader);
+        return customWait.isElementVisible(formAuthHeader);
     }
 
     public boolean isLoginSuccessful() {
-        return customWait.isElementPresent(loginSuccess);
+        return customWait.isElementVisible(loginSuccess);
     }
 
     public boolean isLogoutSuccessful() {
-        return customWait.isElementPresent(logoutSuccess);
+        return customWait.isElementVisible(logoutSuccess);
     }
 }

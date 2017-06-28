@@ -48,6 +48,6 @@ public class LoginGooglePage extends BasePage {
 
     @Override
     public boolean isLoaded() {
-        return customWait.isElementPresent(emailField) && customWait.isElementPresent(nextButton);
+        return customWait.isElementVisible(emailField) && customWait.isElementVisible(nextButton);
     }
 }
