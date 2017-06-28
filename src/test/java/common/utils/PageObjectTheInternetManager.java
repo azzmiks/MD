@@ -1,11 +1,8 @@
 package common.utils;
 
-import theInternet.pages.DragAndDropPage;
-import theInternet.pages.FileUploadPage;
-import theInternet.pages.MainPage;
+import theInternet.pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import theInternet.pages.WYSIWYGEditorPage;
 
 
 /**
@@ -14,6 +11,11 @@ import theInternet.pages.WYSIWYGEditorPage;
 public class PageObjectTheInternetManager {
     private final WebDriver webDriver;
     private MainPage mainPage;
+    private ABTestingPage abTestingPage;
+    private BasicAuthPage basicAuthPage;
+    private FormAuthenticationPage formAuthenticationPage;
+    private CheckboxesPage checkboxesPage;
+    private DropdownPage dropdownPage;
     private FileUploadPage fileUploadPage;
     private DragAndDropPage dragAndDropPage;
     private WYSIWYGEditorPage wysiwygEditorPage;
@@ -27,6 +29,41 @@ public class PageObjectTheInternetManager {
             mainPage = PageFactory.initElements(webDriver, MainPage.class);
         }
         return mainPage;
+    }
+
+    public ABTestingPage getAbTestingPage() {
+        if (abTestingPage == null) {
+            abTestingPage = PageFactory.initElements(webDriver, ABTestingPage.class);
+        }
+        return abTestingPage;
+    }
+
+    public BasicAuthPage getBasicAuthPage() {
+        if (basicAuthPage == null) {
+            basicAuthPage = PageFactory.initElements(webDriver, BasicAuthPage.class);
+        }
+        return basicAuthPage;
+    }
+
+    public FormAuthenticationPage getFormAuthenticationPage() {
+        if (formAuthenticationPage == null) {
+            formAuthenticationPage = PageFactory.initElements(webDriver, FormAuthenticationPage.class);
+        }
+        return formAuthenticationPage;
+    }
+
+    public CheckboxesPage getCheckboxesPage() {
+        if (checkboxesPage == null) {
+            checkboxesPage = PageFactory.initElements(webDriver, CheckboxesPage.class);
+        }
+        return checkboxesPage;
+    }
+
+    public DropdownPage getDropdownPage() {
+        if (dropdownPage == null) {
+            dropdownPage = PageFactory.initElements(webDriver, DropdownPage.class);
+        }
+        return dropdownPage;
     }
 
     public FileUploadPage getFileUploadPage() {

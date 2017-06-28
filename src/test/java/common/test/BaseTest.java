@@ -38,12 +38,12 @@ public class BaseTest {
     }
 
 //    protected WebDriver webDriver;
-//    protected PageObjectManager manager;
+//    protected PageObjectTheInternetManager manager;
 //
 //    public BaseTest() {
 ////        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
 //        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
 //        webDriver = new ChromeDriver();
-//        manager = new PageObjectManager(webDriver);
+//        manager = new PageObjectTheInternetManager(webDriver);
 //    }
 }
