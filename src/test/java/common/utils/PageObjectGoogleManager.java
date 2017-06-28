@@ -1,8 +1,6 @@
 package common.utils;
 
-import google.pages.MainGooglePage;
-import google.pages.LoginGooglePage;
-import google.pages.PasswordGooglePage;
+import google.pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -40,4 +38,5 @@ public class PageObjectGoogleManager {
         }
         return passwordGooglePage;
     }
+
 }
