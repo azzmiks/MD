@@ -29,7 +29,8 @@ public class BaseTest {
 
     private void setDriver() throws NullPointerException {
         if(System.getProperty("driver").equals("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+ //           System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
             webDriver = new ChromeDriver();
         } else if (System.getProperty("driver").equals("firefox")) {
             System.setProperty("webdriver.gecko.driver", "src/test/resources/geckodriver.exe");

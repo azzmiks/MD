@@ -9,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
  * Created by Myroslava_Zubach on 20.06.2017.
  */
 public class PageObjectTheInternetManager {
+
     private final WebDriver webDriver;
     private MainPage mainPage;
     private ABTestingPage abTestingPage;
