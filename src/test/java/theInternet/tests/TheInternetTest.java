@@ -33,11 +33,11 @@ public class TheInternetTest extends BaseTest {
         super.webDriver.quit();
     }
 
-    @Test
-    public void shouldDisplayProperABTestingText(){
-        manager.getMainPage().clickOnABTestingLink();
-        manager.getAbTestingPage().checkABTestContent("split testing");
-    }
+//    @Test
+//    public void shouldDisplayProperABTestingText(){
+//        manager.getMainPage().clickOnABTestingLink();
+//        manager.getAbTestingPage().checkABTestContent("split testing");
+//    }
 
     @Test
     public void shouldBasicAuthOK() {
