@@ -34,7 +34,7 @@ public class FileUploadPage extends BasePage {
     }
 
     public FileUploadPage clickUpload() {
-        uploadButton.click();
+        customWait.clickElement(uploadButton);
         return this;
     }
 
