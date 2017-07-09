@@ -9,13 +9,11 @@ public enum UrlProvider {
 
     private final String baseUrl;
 
-    private UrlProvider(String baseUrl) {
-
+    UrlProvider(String baseUrl) {
         this.baseUrl = baseUrl;
     }
 
     public String getUrl() {
-
         return baseUrl;
     }
 }
